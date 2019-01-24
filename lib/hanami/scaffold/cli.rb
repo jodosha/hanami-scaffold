@@ -19,15 +19,15 @@ module Hanami
           singular = Shellwords.escape(model)
           plural   = Utils::String.pluralize(singular)
 
-          exec "bundle exec hanami generate model #{singular}"
+          system "bundle exec hanami generate model #{singular}"
 
-          exec "bundle exec hanami generate action #{app} #{plural}#index --url=/#{plural}"
-          exec "bundle exec hanami generate action #{app} #{plural}#show --url=/#{plural}"
-          exec "bundle exec hanami generate action #{app} #{plural}#new --url=/#{plural}/new"
-          exec "bundle exec hanami generate action #{app} #{plural}#create --url=/#{plural}"
-          exec "bundle exec hanami generate action #{app} #{plural}#edit --url=/#{plural}/edit"
-          exec "bundle exec hanami generate action #{app} #{plural}#update --url=/#{plural}"
-          exec "bundle exec hanami generate action #{app} #{plural}#destroy --url=/#{plural}"
+          system %(bundle exec hanami generate action #{app} #{plural}#index --url="/#{plural}")
+          system %(bundle exec hanami generate action #{app} #{plural}#show --url="/#{plural}")
+          system %(bundle exec hanami generate action #{app} #{plural}#new --url="/#{plural}/new")
+          system %(bundle exec hanami generate action #{app} #{plural}#create --url="/#{plural}")
+          system %(bundle exec hanami generate action #{app} #{plural}#edit --url="/#{plural}/edit")
+          system %(bundle exec hanami generate action #{app} #{plural}#update --url="/#{plural}")
+          system %(bundle exec hanami generate action #{app} #{plural}#destroy --url="/#{plural}")
         end
         # rubocop:enable Metrics/MethodLength
       end
