@@ -10,8 +10,8 @@ module Hanami
       class Command < Hanami::CLI::Commands::Command
         desc "Generate scaffold"
 
-        argument :app,   "The app name"
-        argument :model, "The model name"
+        argument :app,   desc: "The app name"
+        argument :model, desc: "The model name"
 
         # rubocop:disable Metrics/MethodLength
         def call(app, model, **)
