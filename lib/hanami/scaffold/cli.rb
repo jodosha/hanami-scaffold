@@ -34,3 +34,5 @@ module Hanami
     end
   end
 end
+
+Hanami::CLI.register "generate scaffold", Hanami::Scaffold::CLI::Command
