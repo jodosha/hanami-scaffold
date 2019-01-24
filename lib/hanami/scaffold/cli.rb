@@ -14,7 +14,7 @@ module Hanami
         argument :model, desc: "The model name"
 
         # rubocop:disable Metrics/MethodLength
-        def call(app, model, **)
+        def call(app:, model:, **)
           app      = Shellwords.escape(app)
           singular = Shellwords.escape(model)
           plural   = Utils::String.pluralize(singular)
